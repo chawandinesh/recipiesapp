@@ -3,6 +3,7 @@ import {
   FlatList,
   Text,
   View,
+  Dimensions,
   Image,
   TouchableHighlight
 } from 'react-native';
@@ -15,7 +16,7 @@ import {
   getRecipesByCategoryName,
   getRecipesByIngredientName
 } from '../../data/MockDataAPI';
-
+const {height,width} = Dimensions.get('window')
 export default class SearchScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     const { params = {} } = navigation.state;
@@ -32,6 +33,7 @@ export default class SearchScreen extends React.Component {
           containerStyle={{
             backgroundColor: 'transparent',
             borderBottomColor: 'transparent',
+            width: width * 0.5,
             borderTopColor: 'transparent',
             flex: 1
           }}
